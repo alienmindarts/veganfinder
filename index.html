@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan Product Comparison</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vegan Product Comparison</h1>
+        <div class="search-container">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <button type="button" id="clear-search">Clear</button>
+            </form>
+            <div id="results-count"></div>
+        </div>
+        <div class="store-filter">
+            <label><input type="checkbox" name="store" value="all" checked> All Stores</label>
+            <label><input type="checkbox" name="store" value="auchan"> Auchan</label>
+            <label><input type="checkbox" name="store" value="continente"> Continente</label>
+            <label><input type="checkbox" name="store" value="pingo-doce"> Pingo Doce</label>
+        </div>
+        <div class="sort-filter">
+            <label>Sort by:
+                <select id="sort-by">
+                    <option value="default">Default</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="price-per-kg-low-high">Price per kg: Low to High</option>
+                    <option value="price-per-kg-high-low">Price per kg: High to Low</option>
+                </select>
+            </label>
+        </div>
+    </header>
+    
+    <main>
+        <div id="product-grid" class="product-container">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+[2024-05-01 12:34] Fixed Pingo Doce store product display issue:
+- Updated getSelectedStores() function in script.js to handle both 'pingo-doce' and 'Pingo Doce' store names
+- Cleaned up duplicate code sections in script.js
+- Tested store filtering functionality
+
+[2024-05-01 12:36] Enhanced price cleaning functionality:
+- Updated cleanPrice function to handle currency symbols and various price formats
+- Added better decimal point handling
+- Added fallback to '0' for invalid price strings
+- Tested with various price formats including "€1.99", "1,99€", and "1.99"
+
+==== INSTRUCTIONS ====
+1. read the ark file and ALWAYS update it in the same existing structure BEFORE doing any change
+2. updated the ark file at EVERY step with the intentions for next steps and the encountered errors if any
+3. NEVER change or delete instructions area
+
+==== CURRENT STATUS ====
+Search input added to header in index.html
+Search interface styles added to style.css
+Added search-related variables to script.js
+Modified loadProducts to store products in memory
+Implemented search functionality in script.js
+Added store selection checkboxes in index.html
+Added store filter styles in style.css
+Modified script.js to handle store filtering
+Added automatic product updates on checkbox changes
+Implemented "All Stores" checkbox auto-unchecking
+Fixed store name casing issue for Pingo Doce
+Fixed store name comparison in search filtering
+Added debug logging for product loading
+Ensured consistent store name assignment
+Added sorting functionality for price and price per kg
+- Added sort select dropdown in index.html
+- Implemented sortProducts function in script.js
+- Added sort event listener in script.js
+- Modified displayProducts to handle sorting
+- Updated displayProducts to use document fragment for efficient DOM manipulation
+- Removed product shuffling as it was interfering with sorting
+- Updated sortProducts to create array copies and handle price parsing more robustly
+- Enhanced cleanPrice function to handle various price formats
+Everything is working well now.
+
+==== NEXT STEPS ====
+1. Verify cross-browser compatibility
+2. Add error handling for store filter
+3. Add visual feedback for active filters
+4. Add loading indicators during product loading
+5. Add error handling for failed product loads
+6. Implement pagination for large product sets
+7. Publish website for preview using GitHub Pages
+   - Verify Git installation
+   - Add Git to system PATH
+   - Initialize Git repository
+   - Create GitHub repository
+   - Push website files
+   - Enable GitHub Pages
+   - Get public URL to share
+8. Verify GitHub Pages deployment
+   - Check if website loads correctly
+   - Test all functionality
+   - Verify mobile responsiveness
+   - Share URL with friend for feedback
+
+==== ENCOUNTERED ERRORS ====
+CORS error when accessing the website directly from the file system. The issue was resolved by running a local web server using `python -m http.server` and accessing the site via `http://localhost:8000`.
+Store name comparison issue where Pingo Doce products weren't showing due to inconsistent case handling in search filtering. Fixed by removing .toLowerCase() from store name comparison.
+Intermittent Pingo Doce product loading issue caused by inconsistent store name assignment. Fixed by ensuring consistent store name handling during initial load.
+Products appearing grouped by store after sorting, fixed by using document fragment for efficient DOM manipulation and removing product shuffling.
+Sorting inconsistency issue caused by price parsing errors, fixed by adding better error handling and array copying in sortProducts function.
+Price formatting issues causing incorrect sorting, fixed by enhancing cleanPrice function to handle various price formats.
+Git command execution error: Git is not installed on the system. Resolved by installing Git.
+Git PATH configuration error: Git is installed but not accessible in terminal. Need to add Git to system PATH.
